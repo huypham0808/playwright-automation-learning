@@ -70,3 +70,34 @@ const addTogether = (value: any): any => {
 
 console.log(addTogether(2));
 console.log(addTogether("Hello"));
+
+
+/**Kieu du lieu Tuple 
+ * const addAllNumbers = (item: number[]): number => {
+    return item.reduce((a, c) => a + c, 0)
+}
+*/
+
+let hsla: [number, string, string, number];
+hsla = [200, '100%', '50%', 1]
+
+console.log(hsla);
+
+const useCoordinate =():[number, number] => {
+    const lat = 100;
+    const long = 50;
+    return [lat, long]
+};
+console.log(useCoordinate()); //return ve 1 array [100, 50]
+//Distructuring technique
+const [lat, long] = useCoordinate();
+console.log(lat, long);
+
+/**Dat ten cho kieu du lieu trong Tuple */
+
+let user: [name: string, age: number];
+
+user = ['Marry', 10];
+let getUserName = user[0];
+let getUserAge = user[1];
+console.log(`User name is ${getUserName} and age is ${getUserAge}`);
