@@ -101,3 +101,60 @@ user = ['Marry', 10];
 let getUserName = user[0];
 let getUserAge = user[1];
 console.log(`User name is ${getUserName} and age is ${getUserAge}`);
+
+
+/**interface trong typescript */
+
+interface Author{
+    readonly id: number // thuộc tính id chỉ đọc, ko thay đổi được
+    name: string
+    avatar?: string //thêm dâu ? cho biết thuộc tính avatar có dạng optional
+}
+
+const authorOne: Author = {id: 1, name: "Huy", avatar : "./img/avatar.png"}
+
+
+
+const authorTwo: Author = {id: 2, name: "Huy2"}
+let idGet: number = authorTwo.id;
+
+console.log("Id get is: ",idGet)
+
+/**function interface  */
+/**Giao diện (interface) của hàm MathFunction */
+interface MathFunction {
+    (x: number, y: number): number
+}
+//Define 2 function dựa vào interface
+
+const add: MathFunction = (x: number, y: number): number => x + y;
+const sub: MathFunction = (x: number, y: number): number => x - y;
+
+let resultAdd = sub(1, 2);
+console.log(resultAdd)
+
+//Type trong Typescript
+type Rgb = [number, number, number]
+
+function getColorRandom(): Rgb {
+    const r = Math.floor(Math.random() * 255)
+    const g = Math.floor(Math.random() * 255)
+    const b = Math.floor(Math.random() * 255)
+    return [r, g, b]
+}
+
+const getColorOne = getColorRandom();
+console.log("Color 1: ", getColorOne)
+
+/**Type alias */
+type User = {
+    name: string,
+    score: number
+}
+const userOne: User = {name: "Huy Pham", score: 90}
+
+function formatUser (user: User): void {
+    console.log(`${userOne.name} has ${userOne.score} score`)
+};
+
+formatUser(userOne);

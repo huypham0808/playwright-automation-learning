@@ -74,4 +74,27 @@ user = ['Marry', 10];
 let getUserName = user[0];
 let getUserAge = user[1];
 console.log(`User name is ${getUserName} and age is ${getUserAge}`);
+const authorOne = { id: 1, name: "Huy", avatar: "./img/avatar.png" };
+const authorTwo = { id: 2, name: "Huy2" };
+let idGet = authorTwo.id;
+console.log("Id get is: ", idGet);
+//Define 2 function dựa vào interface
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+let resultAdd = sub(1, 2);
+console.log(resultAdd);
+function getColorRandom() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    return [r, g, b];
+}
+const getColorOne = getColorRandom();
+console.log("Color 1: ", getColorOne);
+const userOne = { name: "Huy Pham", score: 90 };
+function formatUser(user) {
+    console.log(`${userOne.name} has ${userOne.score} score`);
+}
+;
+formatUser(userOne);
 //# sourceMappingURL=index.js.map
